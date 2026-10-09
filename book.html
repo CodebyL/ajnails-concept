@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book | AJ Nails &amp; Spa (website concept)</title>
+<meta name="description" content="Book your nail artist at AJ Nails & Spa in Plainview, NY.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+:root{--bg:#fbf7f4;--card:#fff;--blush:#f6e9e4;--rose:#ecd2ca;--ink:#34192a;--soft:#6f5a64;--line:#ead9d2;--berry:#b3364f;--berry-d:#922a40;--sage:#6f8a6a;--sage-l:#e4ece2;--ease:cubic-bezier(.2,.7,.2,1);--disp:"DM Serif Display",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;--wrap:1240px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.04rem/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--disp);font-weight:400;letter-spacing:-.01em;line-height:1.04}
+:focus-visible{outline:3px solid var(--berry);outline-offset:3px}
+[hidden]{display:none!important}
+.skip{position:absolute;left:-999px;top:0;z-index:999;padding:.8rem 1rem;background:var(--ink);color:#fff}.skip:focus{left:1rem}
+.wrap{width:min(100% - 2.4rem,var(--wrap));margin-inline:auto}
+.lab{margin:0;font:700 .76rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--berry)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.6rem 1.5rem;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:#fff;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;transition:background .25s,border-color .25s,color .25s,transform .25s var(--ease)}
+.btn:hover{background:var(--berry);border-color:var(--berry);transform:translateY(-2px)}
+.btn.o{background:transparent;color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;background:var(--ink);border-color:var(--ink)}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*80ms)}
+.js .rv.in{opacity:1;transform:none}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:1rem;min-height:72px}
+.brand{display:flex;align-items:baseline;gap:.5rem;text-decoration:none;color:var(--ink);min-height:44px;align-items:center}
+.brand b{font:400 1.75rem/1 var(--disp)}
+.brand span{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);font-weight:600}
+nav.main{margin-left:auto;display:none;gap:1.7rem}
+nav.main button{background:none;border:0;cursor:pointer;font-weight:600;font-size:.95rem;min-height:44px;padding:0;color:var(--ink)}
+nav.main button:hover{color:var(--berry)}
+.hc{margin-left:auto;display:flex;gap:.5rem}.hc .btn{min-height:44px;padding:.3rem 1.1rem;font-size:.92rem}
+@media(min-width:1000px){nav.main{display:flex}.hc{margin-left:1.6rem}}
+@media(max-width:420px){.hc .o{display:none}.brand span{font-size:.7rem;letter-spacing:.14em}}
+/* hero */
+.hero{padding-block:clamp(2.4rem,5vw,4rem) clamp(3rem,6vw,4.5rem)}
+.hero .g{display:grid;grid-template-columns:minmax(0,1fr);gap:2.6rem;align-items:center}
+@media(min-width:980px){.hero .g{grid-template-columns:1.05fr .95fr;gap:4rem}}
+.hero h1{font-size:clamp(3rem,6.6vw,5.6rem)}
+.hero p.l{color:var(--soft);font-size:1.15rem;max-width:44ch;margin:1.3rem 0 2rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero .open{margin-top:1.8rem;display:flex;align-items:center;gap:.6rem;font-size:.95rem;color:var(--soft)}
+.hero .open i{width:10px;height:10px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px var(--sage-l)}
+.hero .open b{color:var(--ink)}
+.hv{position:relative;display:grid;grid-template-columns:minmax(0,1fr);justify-items:end}
+.hv .ph{width:min(100%,430px);aspect-ratio:432/424;border-radius:28px;overflow:hidden}
+.hv .ph img{width:100%;height:100%;object-fit:cover}
+.nx{position:relative;margin-top:-90px;justify-self:start;width:min(100%,330px);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.1rem 1.2rem;box-shadow:0 30px 60px -34px rgba(52,25,42,.45)}
+.nx h3{font:700 .76rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:.6rem}
+.nx ul{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+.nx li{display:flex;align-items:center;gap:.7rem;padding:.35rem 0}
+.nx li b{font-weight:700;flex:1}
+.nx li span{font-size:.88rem;color:var(--soft)}
+.av{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--c);color:#fff;font:400 1.05rem var(--disp)}
+@media(min-width:980px){.nx{position:absolute;left:0;bottom:-24px;margin:0}}
+/* sections */
+.sec{padding-block:clamp(4rem,8vw,6.5rem)}
+.head{display:grid;gap:1.2rem;margin-bottom:clamp(2rem,4vw,2.8rem)}
+@media(min-width:900px){.head{grid-template-columns:1.1fr .9fr;align-items:end;gap:3rem}}
+.head h2{font-size:clamp(2.4rem,5vw,4rem);margin-top:.7rem}
+.head p{margin:0;color:var(--soft);max-width:48ch}
+/* booking studio */
+.bk{background:var(--blush)}
+.studio{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;align-items:start}
+@media(min-width:1040px){.studio{grid-template-columns:minmax(0,1.6fr) minmax(0,.9fr);gap:1.4rem}}
+.steps{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem}
+.blk{min-width:0}
+.blk{background:var(--card);border-radius:24px;padding:clamp(1.2rem,2.6vw,1.8rem);border:1px solid var(--line)}
+.blk > h3{display:flex;align-items:center;gap:.7rem;font-size:1.6rem;margin-bottom:1rem}
+.blk > h3 i{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font:700 .85rem var(--sans);font-style:normal}
+.blk > h3 small{margin-left:auto;font:500 .86rem var(--sans);color:var(--soft)}
+.svcs{display:flex;flex-wrap:wrap;gap:.5rem}
+.svcs button,.chip{min-height:46px;padding:0 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:.95rem;cursor:pointer;transition:background .25s,border-color .25s,color .25s}
+.svcs button:hover,.chip:hover{border-color:var(--ink)}
+.svcs button[aria-pressed=true],.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem}
+.art{position:relative;text-align:left;border:1.5px solid var(--line);background:var(--bg);border-radius:18px;padding:1rem;cursor:pointer;display:flex;flex-direction:column;gap:.55rem;transition:border-color .25s,transform .3s var(--ease),box-shadow .3s}
+.art:hover{border-color:var(--ink);transform:translateY(-2px)}
+.art[aria-pressed=true]{border-color:var(--berry);background:#fff;box-shadow:0 0 0 2px var(--berry) inset,0 18px 36px -24px rgba(179,54,79,.6)}
+.art .top{display:flex;align-items:center;gap:.6rem}
+.art .av{width:42px;height:42px;font-size:1.3rem}
+.art b{display:block;font:400 1.35rem/1.05 var(--disp)}
+.art small{display:block;font-size:.82rem;color:var(--soft);line-height:1.3}
+.wk{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;align-items:end;height:46px}
+.wk span{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px;height:100%;font-size:.62rem;font-weight:700;color:var(--soft)}
+.wk span i{display:block;width:100%;border-radius:4px;background:var(--c);min-height:3px;opacity:.85}
+.wk span.off i{background:repeating-linear-gradient(45deg,#e6d9d3 0 3px,transparent 3px 6px);height:100%!important;opacity:1}
+.art .nxt{font-size:.84rem;font-weight:600;color:var(--ink)}
+.art .nxt em{font-style:normal;color:var(--sage);font-weight:700}
+.days{display:flex;gap:.5rem;overflow-x:auto;padding:.2rem .1rem .6rem;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.days button{flex:0 0 auto;scroll-snap-align:start;width:78px;min-height:88px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;display:grid;align-content:center;justify-items:center;gap:.05rem;line-height:1.15;padding:.3rem}
+.days button small{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.days button b{font:400 1.6rem var(--disp)}
+.days button em{font-style:normal;font-size:.72rem;font-weight:700;color:var(--sage)}
+.days button.off{opacity:.55;cursor:not-allowed;background:repeating-linear-gradient(45deg,#f4ebe7 0 6px,#fbf7f4 6px 12px)}
+.days button.off em{color:var(--soft)}
+.days button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.days button[aria-pressed=true] small,.days button[aria-pressed=true] em{color:#f2d9df}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:.5rem;margin-top:1rem}
+.slots button{min-height:52px;border-radius:12px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:700;font-size:.95rem;display:grid;align-content:center;justify-items:center;line-height:1.15;padding:.2rem}
+.slots button small{font-size:.72rem;font-weight:600;color:var(--soft)}
+.slots button:hover:not(:disabled){border-color:var(--ink)}
+.slots button:disabled{background:#f6f0ed;color:#b9a9b0;text-decoration:line-through;cursor:not-allowed;border-style:dashed}
+.slots button[aria-pressed=true]{background:var(--berry);border-color:var(--berry);color:#fff}
+.slots button[aria-pressed=true] small{color:#ffe3e9}
+.legend{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.9rem;font-size:.82rem;color:var(--soft)}
+.legend span{display:flex;align-items:center;gap:.4rem}
+.legend i{width:14px;height:14px;border-radius:4px;border:1.5px solid var(--line);background:#fff}
+.legend i.b{background:#f6f0ed;border-style:dashed}
+.legend i.s{background:var(--berry);border-color:var(--berry)}
+.empty{margin:1rem 0 0;padding:1rem;border-radius:14px;background:var(--bg);color:var(--soft);font-size:.95rem}
+.fx{display:grid;gap:.9rem}
+.fx .two{display:grid;gap:.9rem}@media(min-width:560px){.fx .two{grid-template-columns:1fr 1fr}}
+.fx label{display:grid;gap:.3rem;font-size:.88rem;font-weight:700}
+.fx input,.fx select{min-height:50px;border:1.5px solid var(--line);border-radius:14px;padding:.5rem .9rem;background:var(--bg)}
+.fx input:focus,.fx select:focus{border-color:var(--ink);outline:none;background:#fff}
+.err{color:#b3261e;font-size:.8rem;font-weight:600}
+.tg{display:flex;align-items:center;gap:.8rem;min-height:48px;cursor:pointer;font-weight:600}
+.tg input{position:absolute;opacity:0;width:1px;height:1px}
+.tg s{flex:none;width:46px;height:28px;border-radius:999px;background:#e3d3cc;position:relative;transition:background .25s;text-decoration:none}
+.tg s::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .25s var(--ease)}
+.tg input:checked + s{background:var(--sage)}
+.tg input:checked + s::after{transform:translateX(18px)}
+.tg input:focus-visible + s{outline:3px solid var(--berry);outline-offset:2px}
+.tg span small{display:block;font-weight:500;color:var(--soft);font-size:.84rem}
+/* summary */
+.sum{background:var(--card);border-radius:24px;border:1px solid var(--line);padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+@media(min-width:1040px){.sum{position:sticky;top:90px}}
+.sum h3{font-size:1.9rem}
+.sum dl{margin:0;display:grid}
+.sum dl div{display:grid;grid-template-columns:5.6rem 1fr;gap:.6rem;padding:.65rem 0;border-bottom:1px solid #f1e6e1}
+.sum dt{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:700;padding-top:.15rem}
+.sum dd{margin:0;font-weight:700}
+.sum dd.e{color:#b6a3ab;font-weight:500}
+.bub{background:var(--sage-l);border-radius:18px 18px 18px 6px;padding:.8rem 1rem;font-size:.9rem;line-height:1.45}
+.bub small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:.25rem}
+.sum .need{margin:0;font-size:.86rem;color:var(--soft)}
+.sum .btn{width:100%}
+.sum .demo{margin:0;font-size:.8rem;color:var(--soft)}
+.done{display:flex;flex-direction:column;gap:1rem}
+.done h3{font-size:2.1rem}
+.done .tl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.done .tl li{position:relative;padding:0 0 1rem 1.6rem;font-size:.92rem}
+.done .tl li::before{content:"";position:absolute;left:0;top:.35rem;width:11px;height:11px;border-radius:50%;background:var(--sage)}
+.done .tl li::after{content:"";position:absolute;left:5px;top:1rem;bottom:0;width:1px;background:var(--line)}
+.done .tl li:last-child::after{display:none}
+.done .tl b{display:block}
+.done .tl span{color:var(--soft)}
+.done .acts{display:flex;flex-wrap:wrap;gap:.5rem}
+.done .acts .btn{flex:1;min-width:140px;width:auto}
+/* check-in */
+.ci .g{display:grid;grid-template-columns:minmax(0,1fr);gap:1.4rem;align-items:stretch}
+@media(min-width:980px){.ci .g{grid-template-columns:1fr 1fr;gap:1.6rem}}
+.board{background:var(--ink);color:#fbeff2;border-radius:24px;padding:clamp(1.4rem,3vw,2rem);display:flex;flex-direction:column;gap:1.2rem}
+.board h3{font-size:2rem;color:#fff}
+.board p{margin:0;color:#dcc6ce}
+.board ol{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;counter-reset:q}
+.board li{display:grid;grid-template-columns:2.4rem 1fr auto;align-items:center;gap:.6rem;background:rgba(255,255,255,.07);border-radius:14px;padding:.7rem .9rem}
+.board li::before{counter-increment:q;content:counter(q);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.14);font-weight:700;font-size:.85rem}
+.board li b{font-weight:700}
+.board li small{display:block;color:#dcc6ce;font-size:.82rem}
+.board li em{font-style:normal;font-size:.8rem;font-weight:700;color:#bfe0b8}
+.board li.me{background:#fff;color:var(--ink)}
+.board li.me small{color:var(--soft)}
+.board li.me::before{background:var(--berry);color:#fff}
+.board li.me em{color:var(--sage)}
+.board .note{margin-top:auto;font-size:.82rem;color:#c7aeb8}
+.kiosk{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(1.4rem,3vw,2rem);display:flex;flex-direction:column;gap:1.1rem}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--blush);border-radius:999px;padding:4px}
+.tabs button{min-height:46px;border:0;border-radius:999px;background:none;font-weight:700;cursor:pointer;color:var(--soft)}
+.tabs button[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 4px 12px -6px rgba(52,25,42,.35)}
+.kp{display:flex;flex-direction:column;gap:1rem;flex:1}
+.kp h3{font-size:1.7rem}
+.kp p{margin:0;color:var(--soft)}
+.kp .btn{align-self:flex-start}
+.res{border-radius:16px;padding:1rem 1.1rem;background:var(--sage-l);font-size:.95rem}
+.res.no{background:#fbecee}
+.res b{display:block;font:400 1.4rem var(--disp);margin-bottom:.2rem}
+.kp .foot{margin-top:auto;font-size:.82rem;color:var(--soft)}
+/* services */
+.sv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);border-top:1.5px solid var(--ink)}
+.svg{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem}@media(min-width:900px){.svg{grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}}
+.sv li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.sv h3{font-size:1.8rem}
+.sv p{margin:.2rem 0 0;color:var(--soft);font-size:.95rem}
+.sv button{min-height:44px;border-radius:999px;border:1.5px solid var(--ink);background:none;font-weight:700;padding:0 1rem;cursor:pointer}
+.sv button:hover{background:var(--ink);color:#fff}
+/* salon + visit */
+.sal{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem}
+@media(min-width:900px){.sal{grid-template-columns:1fr 1fr 1fr;gap:1.2rem;align-items:stretch}}
+.sal figure{margin:0;border-radius:22px;overflow:hidden;position:relative;min-height:300px}
+.sal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sal .tx{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.8rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem}
+.sal .tx h2{font-size:clamp(2.2rem,3.6vw,3rem)}
+.sal .tx p{margin:0;color:var(--soft)}
+.vis{display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;margin-top:1.2rem}
+@media(min-width:900px){.vis{grid-template-columns:1fr 1fr}}
+.vis .c{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.8rem}
+.vis h3{font-size:1.7rem;margin-bottom:.8rem}
+.hrs{list-style:none;margin:0;padding:0}
+.hrs li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid #f1e6e1;font-size:.95rem}
+.hrs li.t{font-weight:700;color:var(--berry)}
+.vis address{font-style:normal;font-size:1.1rem;font-weight:600;margin-bottom:1rem}
+.vis .acts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.vis a.tel{font:400 2rem var(--disp);color:var(--ink);text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
+footer{border-top:1px solid var(--line);padding-block:2.2rem;color:var(--soft);font-size:.88rem}
+footer .wrap{display:grid;gap:.6rem}
+footer p{margin:0}
+.mbar{display:none}
+@media(max-width:640px){.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);padding:8px;gap:8px}.mbar .btn{min-height:48px}body{padding-bottom:66px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.js .rv{opacity:1;transform:none}}
+
+nav.main a{font-weight:600;font-size:.95rem;min-height:44px;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none}
+nav.main a:hover,nav.main a[aria-current]{color:var(--berry)}
+.mbar a{text-decoration:none}
+.phead{padding-block:clamp(2.6rem,6vw,4.2rem) 1rem;background:linear-gradient(var(--blush),var(--bg))}
+.phead h1{font-size:clamp(3rem,7vw,5.4rem);margin:.6rem 0 1rem}
+.phead p:not(.lab){color:var(--soft);max-width:52ch;margin:0;font-size:1.1rem}
+.stepper{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.stepper li{display:flex;align-items:center;gap:.6rem;padding:.8rem 0;border-bottom:3px solid var(--line);font-weight:700;color:var(--soft);font-size:.95rem}
+.stepper i{flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#efe4df;font-style:normal;font-size:.85rem}
+.stepper li.on{color:var(--ink);border-color:var(--berry)}
+.stepper li.on i{background:var(--ink);color:#fff}
+.stepper li.ok i{background:var(--sage);color:#fff}
+.stepper li.ok i::before{content:"\2713"}.stepper li.ok i{font-size:0}.stepper li.ok i::before{font-size:.85rem}
+.pane{display:grid;gap:1.2rem}
+.blk.pane,.pane .blk{min-width:0}
+.hintx{font-weight:500;color:var(--soft);font-size:.82rem}
+.opt{font-weight:500;color:var(--soft)}
+.fx textarea{min-height:84px;border:1.5px solid var(--line);border-radius:14px;padding:.6rem .9rem;background:var(--bg);resize:vertical}
+.fx textarea:focus{border-color:var(--ink);outline:none;background:#fff}
+.found{border-radius:16px;background:var(--sage-l);padding:1rem 1.1rem;display:grid;gap:.6rem}
+.found b{font:400 1.3rem var(--disp)}
+.found .acts{display:flex;flex-wrap:wrap;gap:.5rem}
+.found .btn{min-height:44px;padding:0 1rem;font-size:.9rem}
+.nav2{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding-top:1rem;border-top:1px solid var(--line)}
+.guests{display:flex;flex-wrap:wrap;gap:.5rem}
+.ctabs{display:flex;gap:.4rem;overflow-x:auto;padding-bottom:.5rem;scrollbar-width:thin}
+.ctabs button{flex:0 0 auto;min-height:44px;padding:0 1rem;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:.9rem;cursor:pointer;white-space:nowrap}
+.ctabs button[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.ctabs button em{font-style:normal;display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:10px;background:var(--berry);color:#fff;font-size:.72rem;margin-left:.4rem;padding:0 .3rem}
+.slist{list-style:none;margin:.6rem 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:.45rem;max-height:440px;overflow-y:auto;padding-right:.2rem}
+@media(min-width:640px){.slist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.slist button{width:100%;min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:.8rem;text-align:left;border-radius:14px;border:1.5px solid var(--line);background:#fff;padding:.5rem .9rem;cursor:pointer;font-weight:600;font-size:.94rem}
+.slist button b{font:400 1.2rem var(--disp);white-space:nowrap}
+.slist button:hover{border-color:var(--ink)}
+.slist button[aria-pressed=true]{border-color:var(--berry);background:#fff5f7;box-shadow:inset 0 0 0 1px var(--berry)}
+.slist button[aria-pressed=true]::after{content:"\2713";flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--berry);color:#fff;font-size:.75rem;margin-left:.2rem}
+.rev{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rev li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.rev li span{color:var(--soft)}
+.rev li b{font-weight:700}
+.tot{display:flex;justify-content:space-between;align-items:baseline}
+.tot b{font:400 2.2rem var(--disp)}
+.pay{margin:0;padding:.8rem 1rem;border-radius:14px;background:var(--blush);font-size:.92rem}
+.done .acts{display:flex;flex-wrap:wrap;gap:.5rem}
+@media(min-width:1040px){.sum{top:90px}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+ <a class="brand" href="index.html" aria-label="AJ Nails and Spa, home"><b>AJ</b><span>Nails &amp; Spa</span></a>
+ <nav class="main" aria-label="Main"><a href="services.html">Services &amp; prices</a><a href="book.html" aria-current="page">Book</a><a href="index.html#checkin">Check in</a><a href="index.html#visit">Visit</a></nav>
+ <div class="hc"><a class="btn o" href="index.html#checkin">Check in</a><a class="btn" href="book.html">Book</a></div>
+</div></header>
+<main id="main" tabindex="-1">
+<section class="phead"><div class="wrap">
+ <p class="lab rv">Book online &middot; sample feature</p>
+ <h1 class="rv" style="--d:1">Book your appointment.</h1>
+ <p class="rv" style="--d:2">Three short steps: you, your appointment, then review. Choose your own nail artist and see exactly when they're free.</p>
+</div></section>
+<section class="sec" style="padding-top:2rem"><div class="wrap">
+ <ol class="stepper" id="stepper" aria-label="Booking steps"><li class="on" data-k="0"><i>1</i><span>Your info</span></li><li data-k="1"><i>2</i><span>Appointment</span></li><li data-k="3"><i>3</i><span>Review</span></li></ol>
+ <div class="studio">
+  <div class="steps">
+   <!-- step 1 -->
+   <div class="blk pane" id="p0">
+    <h3><i>1</i>Your info</h3>
+    <div class="fx">
+     <label>Mobile phone<input id="cP" type="tel" autocomplete="tel" placeholder="(516) 555-0123" required><span class="err" hidden>Please enter your mobile number.</span><small class="hintx">We text your confirmation and reminders here.</small></label>
+     <div class="found" id="found" hidden></div>
+     <div class="two"><label>First name<input id="cF" autocomplete="given-name" required><span class="err" hidden>Please enter your first name.</span></label><label>Last name<input id="cL" autocomplete="family-name"></label></div>
+     <label>Email <span class="opt">(optional)</span><input id="cE" type="email" autocomplete="email"></label>
+     <label>Notes for the salon <span class="opt" id="rmN">0 / 160</span><textarea id="cR" maxlength="160" placeholder="Allergies, nail length, a design you love"></textarea></label>
+    </div>
+    <div class="nav2"><span></span><button class="btn" type="button" id="n0">Next: appointment</button></div>
+   </div>
+   <!-- step 2 -->
+   <div class="pane" id="p1" hidden>
+    <div class="blk"><h3><i>2</i>Who's coming?<small>Booking for a group of 3 or more? Call the salon.</small></h3>
+     <div class="guests" role="group" aria-label="Number of guests"><button type="button" class="chip" aria-pressed="true" data-g="1">Just me</button><button type="button" class="chip" aria-pressed="false" data-g="2">Me + 1 guest</button></div></div>
+    <div class="blk"><h3>Services<small id="svcN">Pick one or more</small></h3>
+     <div class="ctabs" id="ctabs" role="tablist" aria-label="Service categories"></div>
+     <ul class="slist" id="slist"></ul></div>
+    <div class="blk"><h3>Nail artist</h3><div class="arts" id="arts" role="group" aria-label="Nail artists"></div></div>
+    <div class="blk"><h3>Day and time<small id="dayInfo"></small></h3>
+     <div class="days" id="days" role="group" aria-label="Days"></div>
+     <div class="slots" id="slots" role="group" aria-label="Open times"></div>
+     <p class="empty" id="slotEmpty" hidden></p>
+     <div class="legend" aria-hidden="true"><span><i></i>Open</span><span><i class="b"></i>Booked</span><span><i class="s"></i>Your pick</span></div>
+     <div class="nav2"><button class="btn o" type="button" id="b1">Back</button><button class="btn" type="button" id="n1">Next: review</button></div></div>
+   </div>
+   <!-- step 3 -->
+   <div class="blk pane" id="p2" hidden>
+    <h3><i>3</i>Review &amp; reminders</h3>
+    <ul class="rev" id="rev"></ul>
+    <div class="tot"><span>Estimated total</span><b id="tot">$0</b></div>
+    <p class="pay">Pay at the salon after your service. No card needed to book.</p>
+    <div class="fx">
+     <label class="tg"><input type="checkbox" id="r1" checked><s></s><span>Text me the day before<small>At the same time as your appointment</small></span></label>
+     <label class="tg"><input type="checkbox" id="r2" checked><s></s><span>Text me 2 hours before<small>So you're never rushing in</small></span></label>
+    </div>
+    <div class="bub" id="bub"><small>Reminder preview</small><span id="bubT"></span></div>
+    <div class="nav2"><button class="btn o" type="button" id="b2">Back</button><button class="btn" type="button" id="conf">Confirm appointment</button></div>
+   </div>
+   <!-- done -->
+   <div class="blk pane done" id="pd" hidden tabindex="-1">
+    <p class="lab">Booked</p><h3 id="dH" style="font-size:2.4rem">See you soon.</h3><p id="dT" style="margin:0;color:var(--soft)"></p>
+    <ol class="tl" id="tl"></ol>
+    <div class="acts"><button class="btn" type="button" id="ics">Add to calendar</button><a class="btn o" href="index.html#checkin">Check in when you arrive</a><button class="btn o" type="button" id="again">Book another</button></div>
+    <p class="demo">Demo only. No texts were sent. On the real site the salon's booking system sends these.</p>
+   </div>
+  </div>
+  <aside class="sum" aria-label="Your appointment">
+   <div><p class="lab" style="color:var(--soft)">Your appointment</p><h3 style="margin-top:.4rem">AJ Nails &amp; Spa</h3></div>
+   <dl>
+    <div><dt>Name</dt><dd id="sN" class="e">Not added yet</dd></div>
+    <div><dt>Services</dt><dd id="sS" class="e">Not picked yet</dd></div>
+    <div><dt>Artist</dt><dd id="sA" class="e">Not picked yet</dd></div>
+    <div><dt>When</dt><dd id="sW" class="e">Not picked yet</dd></div>
+    <div><dt>Total</dt><dd id="sT" class="e">$0</dd></div>
+   </dl>
+   <p class="need" id="need" aria-live="polite"></p>
+   <p class="demo">Sample booking. Prices are the salon's; artist names and schedules are placeholders. Nothing is sent or saved.</p>
+  </aside>
+ </div>
+</div></section>
+</main>
+<div class="mbar"><a class="btn o" href="services.html">Prices</a><a class="btn" href="book.html">Book</a></div>
+<footer><div class="wrap"><p><b style="color:var(--ink)">AJ Nails &amp; Spa</b> &middot; 1014 Old Country Rd, Plainview, NY 11803 &middot; <a href="tel:+15168824808" style="color:inherit">(516) 882-4808</a></p>
+ <p>Independent website concept. Not affiliated with or approved by AJ Nails &amp; Spa. Photos, hours, services and prices are from the salon's current website and online booking page, checked October 9, 2026. Booking, check-in and reminders are sample features: artist names, schedules and wait times are placeholders, and nothing is sent or saved.</p></div></footer>
+<script>(function(){
+"use strict";
+var d=document,$=function(s,r){return (r||d).querySelector(s)},$$=function(s,r){return [].slice.call((r||d).querySelectorAll(s))};
+d.documentElement.classList.add("js");
+var RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function go(id){var el=d.getElementById(id);if(!el)return;var y=el.getBoundingClientRect().top+pageYOffset-(id==="top"?0:76);scrollTo({top:y,behavior:RM?"auto":"smooth"});try{el.focus({preventScroll:true})}catch(e){}}
+d.addEventListener("click",function(e){var g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.getAttribute("data-go"));}});
+var pend=$$(".rv");function tick(){var vh=innerHeight;pend=pend.filter(function(el){if(el.closest("[hidden]"))return true;var r=el.getBoundingClientRect();if(r.top<vh*.92){el.classList.add("in");return false;}return true;});}
+addEventListener("scroll",tick,{passive:true});addEventListener("resize",tick);setTimeout(tick,30);setTimeout(tick,500);
+
+/* real menu from the salon's online booking page */
+var MENU=[
+ {c:"Nail Care",i:[["Regular Manicure",15,"A classic treatment for nails and cuticles."],["Buffing Manicure",20],["French Manicure",20],["Polish Change Manicure",10],["Kids Manicure (under 10)",10],["AJ Spa Manicure",30],["Color Gel Manicure",32,"Gel polish cured under a UV or LED lamp for a long-lasting finish."],["Color Gel French Manicure",38],["Powder Gel Manicure",42,"Colored powder and gel for a durable finish."],["Powder Gel French Manicure",52],["Powder Gel Ombre Manicure",58],["Acrylic Full Set",42],["Acrylic Fill-in",45],["UV Gel Full Set",75],["UV Gel Fill-in",54],["UV Gel French Full Set",85],["UV Gel French Fill-in",60],["UV Gel Ombre Full Set",95],["UV Gel Ombre Fill-in",75]]},
+ {c:"Pedicure",i:[["Regular Pedicure",25,"Basic care for feet and toenails."],["Polish Change Pedicure",15],["Kids Pedicure (under 10)",18],["Color Gel Pedicure",40,"Gel polish on the toenails."]]},
+ {c:"Spa Pedicure",i:[["AJ Spa Pedicure",38],["Rose Spa Pedicure",46],["Lavender Spa Pedicure",58,"Lavender-based products for relaxation."],["Green Tea Spa Pedicure",68,"Green tea and botanical ingredients."],["Organic Spa Pedicure",78],["Champagne Spa Pedicure",88],["Chocolate Milk Spa Pedicure",98],["Purissima Organic Spa Pedicure",108]]},
+ {c:"Waxing",i:[["Lip Waxing",10],["Chin Waxing",12],["Eyebrow Waxing",12],["Cheek Waxing",15],["Under Arm Waxing",20],["Bikini Waxing",30],["Half Arm Waxing",30],["Full Face Waxing",35],["Half Leg Waxing",35],["Full Arm Waxing",38],["Chest Waxing",40],["Back Waxing",50],["Brazilian Bikini Waxing",50],["Full Leg Waxing",50]]},
+ {c:"Eyelash Extension",i:[["Eyebrow Tint",25],["Regular Eyelash Refill",35],["Regular Eyelash Extension",65],["Eyelash Refill",80,"Keeps existing extensions full."],["Eyelash One By One New Set",120]]},
+ {c:"Facial",i:[["AJ Basic Mini Facial",50],["Special Signature Facial",85],["Collagen Facial",130]]},
+ {c:"Ear Candle",i:[["Ear Candle",48]]}
+];
+var ALL=[];MENU.forEach(function(g,gi){g.i.forEach(function(s,si){ALL.push({id:gi+"-"+si,c:g.c,n:s[0],p:s[1],d:s[2]||""})})});
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");}
+
+/* sample artists (placeholders) */
+var SALON=[[600,1110],[570,1170],[570,1170],[570,1170],[570,1170],[570,1170],[570,1170]];
+var A=[
+ {id:"mia",n:"Mia",sp:"Gel, acrylic & nail art",c:"#b3364f",sh:{1:[570,1050],2:[570,1050],3:[570,1050],4:[570,1050],5:[570,1050]}},
+ {id:"lena",n:"Lena",sp:"Spa pedicures",c:"#6f8a6a",sh:{0:[600,1110],3:[660,1170],4:[660,1170],5:[660,1170],6:[660,1170]}},
+ {id:"tina",n:"Tina",sp:"Lashes, waxing & facials",c:"#8a5a7a",sh:{0:[600,930],1:[570,930],2:[570,930],4:[570,930],6:[570,930]}},
+ {id:"kim",n:"Kim",sp:"UV gel & French",c:"#c47a4a",sh:{2:[810,1170],3:[810,1170],4:[810,1170],5:[810,1170],6:[810,1170]}}
+];
+var N=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],NL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var now=new Date(),base=new Date(now);base.setHours(0,0,0,0);
+var DAYS=[];for(var i=0;i<14;i++){var x=new Date(base);x.setDate(base.getDate()+i);DAYS.push(x);}
+var nowMin=now.getHours()*60+now.getMinutes();
+function store(k,v){try{if(v===undefined){return JSON.parse(sessionStorage.getItem(k)||"null")}sessionStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+var APPTS=store("ajAppts")||[];
+function saveAppts(){store("ajAppts",APPTS)}
+function isTaken(a,di,m){var dk=DAYS[di].toDateString();return APPTS.some(function(p){return !p.cancel&&p.artist===a&&p.day===dk&&p.m===m})}
+function hsh(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return ((h>>>0)%1000)/1000;}
+function tm(m){var h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+(mm<10?"0":"")+mm+" "+ap;}
+function slotsFor(a,di){var dt=DAYS[di],sh=a.sh[dt.getDay()];if(!sh)return null;var out=[];for(var m=sh[0];m<=sh[1]-60;m+=30){var past=di===0&&m<nowMin+30;if(past)continue;var bk=hsh(a.id+dt.getDate()+"-"+m)<.4||isTaken(a.id,di,m);out.push({m:m,open:!bk});}return out;}
+function openCount(a,di){var s=slotsFor(a,di);return s?s.filter(function(x){return x.open}).length:-1;}
+function nextOpen(a){for(var di=0;di<DAYS.length;di++){var s=slotsFor(a,di);if(!s)continue;for(var k=0;k<s.length;k++)if(s[k].open)return {di:di,m:s[k].m};}return null;}
+function dayLabel(di){return di===0?"Today":di===1?"Tomorrow":N[DAYS[di].getDay()]+" "+M[DAYS[di].getMonth()]+" "+DAYS[di].getDate();}
+function digits(s){return (s||"").replace(/\D/g,"")}
+
+/* shared: hours + open status */
+var H=[["Monday","9:30 AM to 7:30 PM"],["Tuesday","9:30 AM to 7:30 PM"],["Wednesday","9:30 AM to 7:30 PM"],["Thursday","9:30 AM to 7:30 PM"],["Friday","9:30 AM to 7:30 PM"],["Saturday","9:30 AM to 7:30 PM"],["Sunday","10:00 AM to 6:30 PM"]];
+var today=NL[now.getDay()];
+if($("#hrs"))$("#hrs").innerHTML=H.map(function(h){return '<li'+(h[0]===today?' class="t"':'')+'><span>'+h[0]+(h[0]===today?' (today)':'')+'</span><span>'+h[1]+'</span></li>'}).join("");
+var sal=SALON[now.getDay()];
+if($("#openT"))$("#openT").innerHTML=(nowMin>=sal[0]&&nowMin<sal[1])?"<b>Open now</b> until "+tm(sal[1]):"Open today "+tm(sal[0])+" to "+tm(sal[1]);
+if($("#nx"))$("#nx").innerHTML=A.map(function(a){var s=slotsFor(a,0),f=s&&s.filter(function(x){return x.open})[0];return '<li><span class="av" style="--c:'+a.c+'">'+a.n[0]+'</span><b>'+a.n+'</b><span>'+(f?tm(f.m):(s?'Fully booked':'Off today'))+'</span></li>'}).join("");
+
+window.AJ={$:$,$$:$$,RM:RM,go:go,MENU:MENU,ALL:ALL,slug:slug,A:A,N:N,NL:NL,M:M,DAYS:DAYS,nowMin:nowMin,APPTS:APPTS,saveAppts:saveAppts,slotsFor:slotsFor,openCount:openCount,nextOpen:nextOpen,dayLabel:dayLabel,tm:tm,digits:digits,store:store,tick:function(){pend=pend.concat($$(".rv:not(.in)"));tick();}};
+})();
+</script>
+<script>
+(function(){var J=window.AJ,$=J.$,$$=J.$$,d=document,A=J.A,DAYS=J.DAYS,N=J.N,NL=J.NL,M=J.M,tm=J.tm;
+var B={sv:[],g:1,a:null,di:null,m:null,ma:null,cat:0,edit:null};
+var q=new URLSearchParams(location.search).get("s");if(q&&J.ALL.some(function(x){return x.id===q})){B.sv.push(q);B.cat=+q.split("-")[0];}
+var step=0;
+function show(k){step=k;["p0","p1","p2"].forEach(function(id,i){$("#"+id).hidden=i!==k});$("#pd").hidden=true;$$("#stepper li").forEach(function(li,i){li.classList.toggle("on",i===k);li.classList.toggle("ok",i<k)});J.tick();var t=$("#stepper");scrollTo({top:t.getBoundingClientRect().top+pageYOffset-90,behavior:J.RM?"auto":"smooth"});}
+/* step 1 */
+function err(i,ok){var e=i.parentNode.querySelector(".err");if(e)e.hidden=ok;i.setAttribute("aria-invalid",!ok);}
+$("#cR").addEventListener("input",function(){$("#rmN").textContent=this.value.length+" / 160"});
+function lookup(){var v=J.digits($("#cP").value),f=$("#found");var ap=v.length>=7?J.APPTS.filter(function(a){return a.phone===v&&!a.cancel})[0]:null;
+ if(!ap){f.hidden=true;return;}f.hidden=false;f.innerHTML='<b>Welcome back, '+ap.first+'.</b><span>You have '+ap.svc+' with '+ap.artistName+', '+ap.when+'.</span><div class="acts"><button class="btn" type="button" id="fU">Change it</button><button class="btn o" type="button" id="fC">Cancel it</button><button class="btn o" type="button" id="fN">Book a new one</button></div>';
+ if(!$("#cF").value)$("#cF").value=ap.first;if(!$("#cL").value)$("#cL").value=ap.last||"";
+ $("#fU").onclick=function(){B.edit=ap;B.sv=ap.ids.slice();B.a=ap.pick;show(1);draw();};
+ $("#fC").onclick=function(){ap.cancel=true;J.saveAppts();f.innerHTML='<b>Cancelled.</b><span>Your '+ap.svc+' on '+ap.when+' is cancelled. (Demo: nothing was sent.)</span>';};
+ $("#fN").onclick=function(){f.hidden=true;};}
+$("#cP").addEventListener("input",lookup);
+$("#cF").addEventListener("input",sum);
+$("#n0").addEventListener("click",function(){var p=$("#cP"),fn=$("#cF"),ok1=J.digits(p.value).length>=7,ok2=!!fn.value.trim();err(p,ok1);err(fn,ok2);if(!ok1){p.focus();return;}if(!ok2){fn.focus();return;}show(1);});
+/* step 2: guests */
+$$(".guests .chip").forEach(function(b){b.addEventListener("click",function(){B.g=+b.getAttribute("data-g");$$(".guests .chip").forEach(function(o){o.setAttribute("aria-pressed",o===b)});sum();})});
+/* services */
+function ctabs(){$("#ctabs").innerHTML=J.MENU.map(function(g,gi){var n=B.sv.filter(function(id){return +id.split("-")[0]===gi}).length;return '<button type="button" role="tab" aria-selected="'+(B.cat===gi)+'" data-c="'+gi+'">'+g.c+(n?'<em>'+n+'</em>':'')+'</button>'}).join("");}
+function slist(){var g=J.MENU[B.cat];$("#slist").innerHTML=g.i.map(function(s,si){var id=B.cat+"-"+si;return '<li><button type="button" data-id="'+id+'" aria-pressed="'+(B.sv.indexOf(id)>-1)+'"><span>'+s[0]+'</span><b>$'+s[1]+'</b></button></li>'}).join("");}
+$("#ctabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;B.cat=+b.getAttribute("data-c");ctabs();slist();});
+$("#slist").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var id=b.getAttribute("data-id"),k=B.sv.indexOf(id);if(k>-1)B.sv.splice(k,1);else B.sv.push(id);b.setAttribute("aria-pressed",k<0);ctabs();sum();});
+/* artists */
+function arts(){var list=[{id:"any",n:"Any artist",sp:"First available",c:"#34192a"}].concat(A);
+ $("#arts").innerHTML=list.map(function(a){var wk="",no;
+  if(a.id==="any"){for(var di=0;di<7;di++){var t=0;A.forEach(function(x){var c=J.openCount(x,di);if(c>0)t+=c});wk+='<span><i style="height:'+Math.min(100,t*3)+'%"></i>'+N[DAYS[di].getDay()][0]+'</span>';}var best=null;A.forEach(function(x){var o=J.nextOpen(x);if(o&&(!best||o.di<best.di||(o.di===best.di&&o.m<best.m)))best=o;});no=best;}
+  else{for(var di=0;di<7;di++){var c=J.openCount(a,di);wk+='<span class="'+(c<0?'off':'')+'"><i style="height:'+(c<0?100:Math.max(6,Math.min(100,c*7)))+'%"></i>'+N[DAYS[di].getDay()][0]+'</span>';}no=J.nextOpen(a);}
+  return '<button type="button" class="art" data-a="'+a.id+'" aria-pressed="'+(B.a===a.id)+'" style="--c:'+a.c+'"><span class="top"><span class="av" style="--c:'+a.c+'">'+(a.id==="any"?"&#10033;":a.n[0])+'</span><span><b>'+a.n+'</b><small>'+a.sp+'</small></span></span><span class="wk" aria-label="Open times over the next 7 days">'+wk+'</span><span class="nxt">Next open: <em>'+(no?J.dayLabel(no.di)+", "+tm(no.m):"None this week")+'</em></span></button>'}).join("");}
+$("#arts").addEventListener("click",function(e){var b=e.target.closest(".art");if(!b)return;B.a=b.getAttribute("data-a");B.m=null;B.ma=null;$$("#arts .art").forEach(function(o){o.setAttribute("aria-pressed",o===b)});if(B.di===null||dayOpen(B.di)<=0){for(var di=0;di<DAYS.length;di++)if(dayOpen(di)>0){B.di=di;break;}}days();slots();sum();});
+function anySlots(di){var map={};A.forEach(function(a){var s=J.slotsFor(a,di);if(!s)return;s.forEach(function(x){if(!map[x.m])map[x.m]={m:x.m,open:false,who:[]};if(x.open){map[x.m].open=true;map[x.m].who.push(a);}})});return Object.keys(map).map(function(k){return map[k]}).sort(function(p,q){return p.m-q.m});}
+function curSlots(di){if(!B.a)return null;if(B.a==="any")return anySlots(di);return J.slotsFor(A.filter(function(x){return x.id===B.a})[0],di);}
+function dayOpen(di){var s=curSlots(di);if(!s||(B.a==="any"&&!s.length))return -1;return s.filter(function(x){return x.open}).length;}
+function days(){if(!B.a){$("#days").innerHTML="";$("#dayInfo").textContent="Pick an artist first";return;}
+ $("#days").innerHTML=DAYS.map(function(x,di){var c=dayOpen(di),off=c<0;return '<button type="button" data-d="'+di+'" class="'+(off?'off':'')+'"'+(off?' aria-disabled="true"':'')+' aria-pressed="'+(B.di===di)+'" aria-label="'+J.dayLabel(di)+', '+(off?'artist off':c+' open times')+'"><small>'+(di===0?'Today':N[x.getDay()])+'</small><b>'+x.getDate()+'</b><em>'+(off?'Off':c===0?'Full':c+' open')+'</em></button>'}).join("");
+ $("#dayInfo").textContent=(B.a==="any"?"All artists":A.filter(function(a){return a.id===B.a})[0].n)+"'s schedule";}
+$("#days").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.classList.contains("off"))return;B.di=+b.getAttribute("data-d");B.m=null;B.ma=null;$$("#days button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});slots();sum();});
+function slots(){var el=$("#slots"),em=$("#slotEmpty");if(!B.a||B.di===null){el.innerHTML="";em.hidden=false;em.textContent=B.a?"Pick a day to see open times.":"Pick an artist to see their open times.";return;}
+ var s=curSlots(B.di)||[];if(!s.some(function(x){return x.open})){el.innerHTML="";em.hidden=false;em.textContent="No open times left on this day. Try another day.";return;}em.hidden=true;
+ el.innerHTML=s.map(function(x){var lab=B.a==="any"&&x.open?'<small>'+x.who.map(function(a){return a.n}).join(", ")+'</small>':(x.open?'':'<small>Booked</small>');return '<button type="button" data-m="'+x.m+'"'+(x.open?'':' disabled')+' aria-pressed="'+(B.m===x.m)+'" aria-label="'+tm(x.m)+(x.open?'':', booked')+'">'+tm(x.m)+lab+'</button>'}).join("");}
+$("#slots").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;B.m=+b.getAttribute("data-m");B.ma=B.a==="any"?anySlots(B.di).filter(function(s){return s.m===B.m})[0].who[0]:A.filter(function(a){return a.id===B.a})[0];$$("#slots button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});sum();});
+/* summary */
+function svs(){return B.sv.map(function(id){return J.ALL.filter(function(x){return x.id===id})[0]})}
+function total(){return svs().reduce(function(t,s){return t+s.p},0)*B.g}
+function when(){return B.m===null?"":J.dayLabel(B.di)+" at "+tm(B.m)}
+function set(id,v,e){var el=$(id);el.classList.toggle("e",!v);el.textContent=v||e;}
+function sum(){set("#sN",($("#cF").value.trim()+" "+$("#cL").value.trim()).trim(),"Not added yet");set("#sS",svs().map(function(s){return s.n}).join(", ")+(B.g>1&&B.sv.length?" (for 2)":""),"Not picked yet");
+ set("#sA",B.ma?B.ma.n+(B.a==="any"?" (first available)":""):(B.a==="any"?"Any artist":B.a?A.filter(function(a){return a.id===B.a})[0].n:""),"Not picked yet");set("#sW",when(),"Not picked yet");set("#sT",B.sv.length?"$"+total():"","$0");
+ $("#svcN").textContent=B.sv.length?B.sv.length+" picked":"Pick one or more";
+ var miss=[];if(!B.sv.length)miss.push("a service");if(!B.a)miss.push("an artist");if(B.m===null)miss.push("a time");$("#need").textContent=step===0?"Start with your mobile number.":miss.length?"Still needed: "+miss.join(", ")+".":"Looks good. Review and confirm.";}
+function draw(){ctabs();slist();arts();days();slots();sum();}
+draw();
+$("#b1").addEventListener("click",function(){show(0);sum();});
+$("#n1").addEventListener("click",function(){var miss=!B.sv.length?"#slist":!B.a?"#arts":B.m===null?(B.di===null?"#days":"#slots"):null;if(miss){sum();var t=$(miss);scrollTo({top:t.getBoundingClientRect().top+pageYOffset-140,behavior:J.RM?"auto":"smooth"});return;}review();show(2);});
+$("#b2").addEventListener("click",function(){show(1);});
+function review(){$("#rev").innerHTML=svs().map(function(s){return '<li><span>'+s.n+(B.g>1?' &times; 2':'')+'</span><b>$'+(s.p*B.g)+'</b></li>'}).join("")+'<li><span>Artist</span><b>'+B.ma.n+'</b></li><li><span>When</span><b>'+when()+'</b></li><li><span>Text to</span><b>'+$("#cP").value.trim()+'</b></li>';$("#tot").textContent="$"+total();bub();}
+function bub(){var r1=$("#r1").checked,r2=$("#r2").checked;$("#bub").hidden=!(r1||r2);$("#bubT").textContent="Hi "+$("#cF").value.trim()+", reminder from AJ Nails & Spa: "+svs().map(function(s){return s.n}).join(", ")+" with "+(B.ma?B.ma.n:"")+" "+(r1?"tomorrow":"today")+" at "+(B.m!==null?tm(B.m):"")+". Reply C to confirm or call (516) 882-4808 to change.";}
+["#r1","#r2"].forEach(function(s){$(s).addEventListener("change",bub)});
+$("#conf").addEventListener("click",function(){var ap={phone:J.digits($("#cP").value),first:$("#cF").value.trim(),last:$("#cL").value.trim(),ids:B.sv.slice(),svc:svs().map(function(s){return s.n}).join(", "),artist:B.ma.id,artistName:B.ma.n,pick:B.a,day:DAYS[B.di].toDateString(),di:B.di,m:B.m,when:when(),total:total()};
+ if(B.edit){B.edit.cancel=true;}J.APPTS.push(ap);J.saveAppts();
+ var dt=DAYS[B.di];$("#dH").textContent=(B.edit?"Updated, ":"See you soon, ")+ap.first+".";$("#dT").textContent=ap.svc+" with "+ap.artistName+", "+NL[dt.getDay()]+", "+M[dt.getMonth()]+" "+dt.getDate()+" at "+tm(ap.m)+". Estimated total $"+ap.total+", paid at the salon.";
+ var tl=['<li><b>Now</b><span>Confirmation text to '+$("#cP").value.trim()+'</span></li>'];
+ if($("#r1").checked){var sk=B.di===0||(B.di===1&&ap.m<=J.nowMin);tl.push('<li><b>'+(sk?"Skipped":J.dayLabel(B.di-1)+", "+tm(ap.m))+'</b><span>'+(sk?"Day-before reminder (that time has passed)":"Day-before reminder")+'</span></li>');}
+ if($("#r2").checked){var sk2=B.di===0&&ap.m-120<=J.nowMin;tl.push('<li><b>'+(sk2?"Skipped":J.dayLabel(B.di)+", "+tm(ap.m-120))+'</b><span>'+(sk2?"2-hour reminder (your visit is sooner)":"2-hour reminder")+'</span></li>');}
+ tl.push('<li><b>'+J.dayLabel(B.di)+", "+tm(ap.m)+'</b><span>Your appointment. Check in on your phone when you arrive.</span></li>');
+ $("#tl").innerHTML=tl.join("");["p0","p1","p2"].forEach(function(id){$("#"+id).hidden=true});$("#pd").hidden=false;$$("#stepper li").forEach(function(li){li.classList.remove("on");li.classList.add("ok")});$("#pd").focus();B.edit=null;});
+$("#again").addEventListener("click",function(){B={sv:[],g:1,a:null,di:null,m:null,ma:null,cat:0,edit:null};$$(".guests .chip").forEach(function(o,i){o.setAttribute("aria-pressed",i===0)});draw();show(1);});
+$("#ics").addEventListener("click",function(){var ap=J.APPTS[J.APPTS.length-1];if(!ap)return;var dt=new Date(DAYS[ap.di]);dt.setMinutes(ap.m);var en=new Date(dt.getTime()+60*60000);
+ function f(x){function p(n){return (n<10?"0":"")+n}return x.getFullYear()+p(x.getMonth()+1)+p(x.getDate())+"T"+p(x.getHours())+p(x.getMinutes())+"00"}
+ var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//AJ Nails concept//EN","BEGIN:VEVENT","UID:"+Date.now()+"@ajnails-concept","DTSTAMP:"+f(new Date()),"DTSTART:"+f(dt),"DTEND:"+f(en),"SUMMARY:"+ap.svc+" with "+ap.artistName+" (AJ Nails & Spa)","LOCATION:1014 Old Country Rd\\, Plainview\\, NY 11803","DESCRIPTION:Sample appointment from a website concept. Not a real booking.","END:VEVENT","END:VCALENDAR"].join("\r\n");
+ var a=d.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="aj-nails-appointment.ics";d.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);});
+})();
+</script>
+</body>
+</html>

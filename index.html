@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AJ Nails &amp; Spa (website concept)</title>
-<meta name="description" content="Website concept for AJ Nails & Spa in Plainview, NY: book your nail artist online, check in on arrival and get appointment reminders.">
+<meta name="description" content="Website concept for AJ Nails & Spa in Plainview, NY: nails, spa pedicures, waxing, lashes and facials. See prices, book your artist and check in from your phone.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -216,14 +216,20 @@ footer p{margin:0}
 .mbar{display:none}
 @media(max-width:640px){.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg);border-top:1px solid var(--line);padding:8px;gap:8px}.mbar .btn{min-height:48px}body{padding-bottom:66px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}.js .rv{opacity:1;transform:none}}
+
+.sv li{grid-template-columns:1fr auto}
+.sva{min-height:44px;display:inline-flex;align-items:center;border-radius:999px;border:1.5px solid var(--ink);font-weight:700;padding:0 1rem;text-decoration:none;color:var(--ink);white-space:nowrap}
+.sva:hover{background:var(--ink);color:#fff}
+nav.main a{font-weight:600;font-size:.95rem;min-height:44px;display:inline-flex;align-items:center;color:var(--ink);text-decoration:none}
+nav.main a:hover,nav.main a[aria-current]{color:var(--berry)}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap">
- <a class="brand" href="#top" data-go="top" aria-label="AJ Nails and Spa, home"><b>AJ</b><span>Nails &amp; Spa</span></a>
- <nav class="main" aria-label="Main"><button type="button" data-go="book">Book</button><button type="button" data-go="checkin">Check in</button><button type="button" data-go="services">Services</button><button type="button" data-go="salon">The salon</button><button type="button" data-go="visit">Visit</button></nav>
- <div class="hc"><button class="btn o" type="button" data-go="checkin">Check in</button><button class="btn" type="button" data-go="book">Book</button></div>
+ <a class="brand" href="index.html" aria-label="AJ Nails and Spa, home"><b>AJ</b><span>Nails &amp; Spa</span></a>
+ <nav class="main" aria-label="Main"><a href="services.html">Services &amp; prices</a><a href="book.html">Book</a><a href="index.html#checkin">Check in</a><a href="index.html#visit">Visit</a></nav>
+ <div class="hc"><a class="btn o" href="index.html#checkin">Check in</a><a class="btn" href="book.html">Book</a></div>
 </div></header>
 <main id="main" tabindex="-1">
 
@@ -231,7 +237,7 @@ footer p{margin:0}
  <div>
   <h1 class="rv" style="--d:1">Your artist. Your time. Beautiful nails.</h1>
   <p class="l rv" style="--d:2">Manicures, pedicures, UV gel, waxing and eyelash extensions in Plainview. Pick the artist you love, see when they're free, and book in under a minute.</p>
-  <div class="cta rv" style="--d:3"><button class="btn" type="button" data-go="book">Book an artist</button><button class="btn o" type="button" data-go="checkin">I'm here, check me in</button></div>
+  <div class="cta rv" style="--d:3"><a class="btn" href="book.html">Book an artist</a><button class="btn o" type="button" data-go="checkin">I'm here, check me in</button></div>
   <p class="open rv" style="--d:4"><i aria-hidden="true"></i><span id="openT">Open seven days a week</span></p>
  </div>
  <div class="hv rv" style="--d:2">
@@ -239,54 +245,6 @@ footer p{margin:0}
   <div class="nx"><h3>Next open today</h3><ul id="nx"></ul></div>
  </div>
 </div></section>
-
-<section class="sec bk" id="book" tabindex="-1"><div class="wrap">
- <div class="head"><div><p class="lab">Book online &middot; sample feature</p><h2 class="rv">Choose your artist, then your time.</h2></div><p class="rv" style="--d:1">Every artist keeps their own schedule. Pick one to see their open times, or choose any artist for the earliest spot.</p></div>
- <div class="studio">
-  <div class="steps">
-   <div class="blk rv"><h3><i>1</i>What are you in for?<small id="svcN">Pick one or more</small></h3>
-    <div class="svcs" id="svcs" role="group" aria-label="Services"></div></div>
-   <div class="blk rv"><h3><i>2</i>Pick your nail artist</h3>
-    <div class="arts" id="arts" role="group" aria-label="Nail artists"></div></div>
-   <div class="blk rv"><h3><i>3</i>Pick a day and time<small id="dayInfo"></small></h3>
-    <div class="days" id="days" role="group" aria-label="Days"></div>
-    <div class="slots" id="slots" role="group" aria-label="Open times"></div>
-    <p class="empty" id="slotEmpty" hidden></p>
-    <div class="legend" aria-hidden="true"><span><i></i>Open</span><span><i class="b"></i>Booked</span><span><i class="s"></i>Your pick</span></div></div>
-   <div class="blk rv"><h3><i>4</i>Your details &amp; reminders</h3>
-    <div class="fx">
-     <div class="two"><label>Name<input id="cN" autocomplete="name"><span class="err" hidden>Please enter your name.</span></label><label>Mobile phone<input id="cP" type="tel" autocomplete="tel" placeholder="(516) 555-0123"><span class="err" hidden>Please enter a phone number.</span></label></div>
-     <label class="tg"><input type="checkbox" id="r1" checked><s></s><span>Text me the day before<small>A reminder at the same time the day before</small></span></label>
-     <label class="tg"><input type="checkbox" id="r2" checked><s></s><span>Text me 2 hours before<small>So you're never rushing in</small></span></label>
-    </div></div>
-  </div>
-  <aside class="sum rv" style="--d:1" aria-label="Your appointment">
-   <div id="sumMain" style="display:flex;flex-direction:column;gap:1rem">
-    <div><p class="lab" style="color:var(--soft)">Your appointment</p><h3 style="margin-top:.4rem">AJ Nails &amp; Spa</h3></div>
-    <dl>
-     <div><dt>Service</dt><dd id="sS" class="e">Not picked yet</dd></div>
-     <div><dt>Artist</dt><dd id="sA" class="e">Not picked yet</dd></div>
-     <div><dt>When</dt><dd id="sW" class="e">Not picked yet</dd></div>
-     <div><dt>Name</dt><dd id="sN" class="e">Not added yet</dd></div>
-     <div><dt>Phone</dt><dd id="sP" class="e">Not added yet</dd></div>
-    </dl>
-    <div class="bub" id="bub"><small>Reminder preview</small><span id="bubT"></span></div>
-    <p class="need" id="need" aria-live="polite"></p>
-    <button class="btn" type="button" id="conf">Confirm appointment</button>
-    <p class="demo">Sample booking. Artist names and schedules are placeholders. Nothing is sent or saved.</p>
-   </div>
-   <div class="done" id="done" hidden tabindex="-1">
-    <p class="lab">Booked</p>
-    <h3 id="dH">See you soon.</h3>
-    <p id="dT" style="margin:0;color:var(--soft)"></p>
-    <ol class="tl" id="tl"></ol>
-    <div class="acts"><button class="btn" type="button" id="ics">Add to calendar</button><button class="btn o" type="button" id="again">Book another</button></div>
-    <p class="demo">Demo only. No texts were sent. On the real site the salon's booking system sends these.</p>
-   </div>
-  </aside>
- </div>
-</div></section>
-
 <section class="sec ci" id="checkin" tabindex="-1"><div class="wrap">
  <div class="head"><div><p class="lab">Check in &middot; sample feature</p><h2 class="rv">Already here? Check in from your phone.</h2></div><p class="rv" style="--d:1">Have an appointment? Check in with your phone number. Walking in? Join the list and we'll text you when your artist is ready.</p></div>
  <div class="g">
@@ -294,7 +252,7 @@ footer p{margin:0}
    <div class="tabs" role="tablist" aria-label="Check-in type"><button type="button" role="tab" id="kt0" aria-selected="true" aria-controls="kp0">I have an appointment</button><button type="button" role="tab" id="kt1" aria-selected="false" aria-controls="kp1">I'm walking in</button></div>
    <div class="kp" id="kp0" role="tabpanel" aria-labelledby="kt0">
     <h3>Find my appointment</h3>
-    <p>Enter the phone number you booked with. Tip: book above first, then check in here.</p>
+    <p>Enter the phone number you booked with. Tip: book first, then check in here.</p>
     <div class="fx"><label>Mobile phone<input id="kP" type="tel" autocomplete="tel"></label></div>
     <button class="btn" type="button" id="kFind">Check me in</button>
     <div class="res" id="kRes" hidden aria-live="polite"></div>
@@ -321,7 +279,7 @@ footer p{margin:0}
 </div></section>
 
 <section class="sec" id="services" tabindex="-1" style="padding-top:0"><div class="wrap svg">
- <div><p class="lab">Services</p><h2 class="rv" style="font-size:clamp(2.4rem,5vw,4rem);margin:.7rem 0 1rem">What we do.</h2><p class="rv" style="--d:1;color:var(--soft);max-width:36ch;margin:0 0 1.6rem">Tap Book on any service and it's added to your appointment. Licensed and certified professionals on every chair.</p><button class="btn rv" style="--d:2" type="button" data-go="book">Book an artist</button></div>
+ <div><p class="lab">Services &amp; prices</p><h2 class="rv" style="font-size:clamp(2.4rem,5vw,4rem);margin:.7rem 0 1rem">What we do.</h2><p class="rv" style="--d:1;color:var(--soft);max-width:36ch;margin:0 0 1.6rem">Nails, spa pedicures, waxing, lashes and facials. See the full menu with every price, then book the one you want.</p><a class="btn rv" style="--d:2" href="services.html">See the full price menu</a></div>
  <ul class="sv" id="sv"></ul>
 </div></section>
 
@@ -334,134 +292,90 @@ footer p{margin:0}
  <div class="vis" id="visit">
   <div class="c rv"><h3>Hours</h3><ul class="hrs" id="hrs"></ul></div>
   <div class="c rv" style="--d:1"><h3>Visit</h3><address>1014 Old Country Rd<br>Plainview, NY 11803</address><a class="tel" href="tel:+15168824808">(516) 882-4808</a>
-   <div class="acts"><a class="btn o" href="https://www.google.com/maps/dir/Current+Location/1014%20Old%20Country%20Rd,%20Plainview,%20NY%2011803,%20USA" target="_blank" rel="noopener">Get directions</a><button class="btn" type="button" data-go="book">Book an artist</button></div></div>
+   <div class="acts"><a class="btn o" href="https://www.google.com/maps/dir/Current+Location/1014%20Old%20Country%20Rd,%20Plainview,%20NY%2011803,%20USA" target="_blank" rel="noopener">Get directions</a><a class="btn" href="book.html">Book an artist</a></div></div>
  </div>
 </div></section>
 </main>
-<div class="mbar"><button class="btn o" type="button" data-go="checkin">Check in</button><button class="btn" type="button" data-go="book">Book</button></div>
-<footer><div class="wrap"><p><b style="color:var(--ink)">AJ Nails &amp; Spa</b> &middot; 1014 Old Country Rd, Plainview, NY 11803 &middot; (516) 882-4808</p>
- <p>Independent website concept. Not affiliated with or approved by AJ Nails &amp; Spa. Photos, hours and services are from the salon's current website. Booking, check-in and reminders are sample features: artist names, schedules and wait times are placeholders, and nothing is sent or saved.</p></div></footer>
-<script>
-(function(){
+<div class="mbar"><a class="btn o" href="services.html">Prices</a><a class="btn" href="book.html">Book</a></div>
+<footer><div class="wrap"><p><b style="color:var(--ink)">AJ Nails &amp; Spa</b> &middot; 1014 Old Country Rd, Plainview, NY 11803 &middot; <a href="tel:+15168824808" style="color:inherit">(516) 882-4808</a></p>
+ <p>Independent website concept. Not affiliated with or approved by AJ Nails &amp; Spa. Photos, hours, services and prices are from the salon's current website and online booking page, checked October 9, 2026. Booking, check-in and reminders are sample features: artist names, schedules and wait times are placeholders, and nothing is sent or saved.</p></div></footer>
+<script>(function(){
 "use strict";
 var d=document,$=function(s,r){return (r||d).querySelector(s)},$$=function(s,r){return [].slice.call((r||d).querySelectorAll(s))};
 d.documentElement.classList.add("js");
 var RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
 function go(id){var el=d.getElementById(id);if(!el)return;var y=el.getBoundingClientRect().top+pageYOffset-(id==="top"?0:76);scrollTo({top:y,behavior:RM?"auto":"smooth"});try{el.focus({preventScroll:true})}catch(e){}}
 d.addEventListener("click",function(e){var g=e.target.closest("[data-go]");if(g){e.preventDefault();go(g.getAttribute("data-go"));}});
-/* reveal */
-var pend=$$(".rv");function tick(){var vh=innerHeight;pend=pend.filter(function(el){var r=el.getBoundingClientRect();if(r.top<vh*.92){el.classList.add("in");return false;}return true;});}
+var pend=$$(".rv");function tick(){var vh=innerHeight;pend=pend.filter(function(el){if(el.closest("[hidden]"))return true;var r=el.getBoundingClientRect();if(r.top<vh*.92){el.classList.add("in");return false;}return true;});}
 addEventListener("scroll",tick,{passive:true});addEventListener("resize",tick);setTimeout(tick,30);setTimeout(tick,500);
 
-/* data */
-var SV=[["Manicure","Shaped, cleaned up and polished."],["Pedicure","Soak, scrub and polish in a massage chair."],["UV gel","Long-wearing gel color with a glossy finish."],["Waxing","Brows, lip and more."],["Eyelash extensions","Fuller, longer lashes, applied one by one."]];
+/* real menu from the salon's online booking page */
+var MENU=[
+ {c:"Nail Care",i:[["Regular Manicure",15,"A classic treatment for nails and cuticles."],["Buffing Manicure",20],["French Manicure",20],["Polish Change Manicure",10],["Kids Manicure (under 10)",10],["AJ Spa Manicure",30],["Color Gel Manicure",32,"Gel polish cured under a UV or LED lamp for a long-lasting finish."],["Color Gel French Manicure",38],["Powder Gel Manicure",42,"Colored powder and gel for a durable finish."],["Powder Gel French Manicure",52],["Powder Gel Ombre Manicure",58],["Acrylic Full Set",42],["Acrylic Fill-in",45],["UV Gel Full Set",75],["UV Gel Fill-in",54],["UV Gel French Full Set",85],["UV Gel French Fill-in",60],["UV Gel Ombre Full Set",95],["UV Gel Ombre Fill-in",75]]},
+ {c:"Pedicure",i:[["Regular Pedicure",25,"Basic care for feet and toenails."],["Polish Change Pedicure",15],["Kids Pedicure (under 10)",18],["Color Gel Pedicure",40,"Gel polish on the toenails."]]},
+ {c:"Spa Pedicure",i:[["AJ Spa Pedicure",38],["Rose Spa Pedicure",46],["Lavender Spa Pedicure",58,"Lavender-based products for relaxation."],["Green Tea Spa Pedicure",68,"Green tea and botanical ingredients."],["Organic Spa Pedicure",78],["Champagne Spa Pedicure",88],["Chocolate Milk Spa Pedicure",98],["Purissima Organic Spa Pedicure",108]]},
+ {c:"Waxing",i:[["Lip Waxing",10],["Chin Waxing",12],["Eyebrow Waxing",12],["Cheek Waxing",15],["Under Arm Waxing",20],["Bikini Waxing",30],["Half Arm Waxing",30],["Full Face Waxing",35],["Half Leg Waxing",35],["Full Arm Waxing",38],["Chest Waxing",40],["Back Waxing",50],["Brazilian Bikini Waxing",50],["Full Leg Waxing",50]]},
+ {c:"Eyelash Extension",i:[["Eyebrow Tint",25],["Regular Eyelash Refill",35],["Regular Eyelash Extension",65],["Eyelash Refill",80,"Keeps existing extensions full."],["Eyelash One By One New Set",120]]},
+ {c:"Facial",i:[["AJ Basic Mini Facial",50],["Special Signature Facial",85],["Collagen Facial",130]]},
+ {c:"Ear Candle",i:[["Ear Candle",48]]}
+];
+var ALL=[];MENU.forEach(function(g,gi){g.i.forEach(function(s,si){ALL.push({id:gi+"-"+si,c:g.c,n:s[0],p:s[1],d:s[2]||""})})});
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");}
+
+/* sample artists (placeholders) */
 var SALON=[[600,1110],[570,1170],[570,1170],[570,1170],[570,1170],[570,1170],[570,1170]];
 var A=[
- {id:"mia",n:"Mia",sp:"Gel manicures & nail art",c:"#b3364f",sh:{1:[570,1050],2:[570,1050],3:[570,1050],4:[570,1050],5:[570,1050]}},
- {id:"lena",n:"Lena",sp:"Pedicures & spa care",c:"#6f8a6a",sh:{0:[600,1110],3:[660,1170],4:[660,1170],5:[660,1170],6:[660,1170]}},
- {id:"tina",n:"Tina",sp:"Lashes & waxing",c:"#8a5a7a",sh:{0:[600,930],1:[570,930],2:[570,930],4:[570,930],6:[570,930]}},
- {id:"kim",n:"Kim",sp:"UV gel & French tips",c:"#c47a4a",sh:{2:[810,1170],3:[810,1170],4:[810,1170],5:[810,1170],6:[810,1170]}}
+ {id:"mia",n:"Mia",sp:"Gel, acrylic & nail art",c:"#b3364f",sh:{1:[570,1050],2:[570,1050],3:[570,1050],4:[570,1050],5:[570,1050]}},
+ {id:"lena",n:"Lena",sp:"Spa pedicures",c:"#6f8a6a",sh:{0:[600,1110],3:[660,1170],4:[660,1170],5:[660,1170],6:[660,1170]}},
+ {id:"tina",n:"Tina",sp:"Lashes, waxing & facials",c:"#8a5a7a",sh:{0:[600,930],1:[570,930],2:[570,930],4:[570,930],6:[570,930]}},
+ {id:"kim",n:"Kim",sp:"UV gel & French",c:"#c47a4a",sh:{2:[810,1170],3:[810,1170],4:[810,1170],5:[810,1170],6:[810,1170]}}
 ];
 var N=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],NL=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 var now=new Date(),base=new Date(now);base.setHours(0,0,0,0);
 var DAYS=[];for(var i=0;i<14;i++){var x=new Date(base);x.setDate(base.getDate()+i);DAYS.push(x);}
 var nowMin=now.getHours()*60+now.getMinutes();
-var taken={};/* user bookings: key artist|day|min */
+function store(k,v){try{if(v===undefined){return JSON.parse(sessionStorage.getItem(k)||"null")}sessionStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+var APPTS=store("ajAppts")||[];
+function saveAppts(){store("ajAppts",APPTS)}
+function isTaken(a,di,m){var dk=DAYS[di].toDateString();return APPTS.some(function(p){return !p.cancel&&p.artist===a&&p.day===dk&&p.m===m})}
 function hsh(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return ((h>>>0)%1000)/1000;}
 function tm(m){var h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+(mm<10?"0":"")+mm+" "+ap;}
-function slotsFor(a,di){var dt=DAYS[di],sh=a.sh[dt.getDay()];if(!sh)return null;var out=[];for(var m=sh[0];m<=sh[1]-60;m+=30){var past=di===0&&m<nowMin+30;var bk=hsh(a.id+dt.getDate()+"-"+m)<.4||taken[a.id+"|"+di+"|"+m];out.push({m:m,open:!past&&!bk,past:past});}return out.filter(function(s){return !s.past});}
+function slotsFor(a,di){var dt=DAYS[di],sh=a.sh[dt.getDay()];if(!sh)return null;var out=[];for(var m=sh[0];m<=sh[1]-60;m+=30){var past=di===0&&m<nowMin+30;if(past)continue;var bk=hsh(a.id+dt.getDate()+"-"+m)<.4||isTaken(a.id,di,m);out.push({m:m,open:!bk});}return out;}
 function openCount(a,di){var s=slotsFor(a,di);return s?s.filter(function(x){return x.open}).length:-1;}
 function nextOpen(a){for(var di=0;di<DAYS.length;di++){var s=slotsFor(a,di);if(!s)continue;for(var k=0;k<s.length;k++)if(s[k].open)return {di:di,m:s[k].m};}return null;}
 function dayLabel(di){return di===0?"Today":di===1?"Tomorrow":N[DAYS[di].getDay()]+" "+M[DAYS[di].getMonth()]+" "+DAYS[di].getDate();}
+function digits(s){return (s||"").replace(/\D/g,"")}
 
-/* hours + hero */
+/* shared: hours + open status */
 var H=[["Monday","9:30 AM to 7:30 PM"],["Tuesday","9:30 AM to 7:30 PM"],["Wednesday","9:30 AM to 7:30 PM"],["Thursday","9:30 AM to 7:30 PM"],["Friday","9:30 AM to 7:30 PM"],["Saturday","9:30 AM to 7:30 PM"],["Sunday","10:00 AM to 6:30 PM"]];
 var today=NL[now.getDay()];
-$("#hrs").innerHTML=H.map(function(h){return '<li'+(h[0]===today?' class="t"':'')+'><span>'+h[0]+(h[0]===today?' (today)':'')+'</span><span>'+h[1]+'</span></li>'}).join("");
-var sal=SALON[now.getDay()];$("#openT").innerHTML=(nowMin>=sal[0]&&nowMin<sal[1])?"<b>Open now</b> until "+tm(sal[1]):"Open today "+tm(sal[0])+" to "+tm(sal[1]);
-function hero(){$("#nx").innerHTML=A.map(function(a){var s=slotsFor(a,0),f=s&&s.filter(function(x){return x.open})[0];return '<li><span class="av" style="--c:'+a.c+'">'+a.n[0]+'</span><b>'+a.n+'</b><span>'+(f?tm(f.m):(s?'Fully booked':'Off today'))+'</span></li>'}).join("");}
-hero();
+if($("#hrs"))$("#hrs").innerHTML=H.map(function(h){return '<li'+(h[0]===today?' class="t"':'')+'><span>'+h[0]+(h[0]===today?' (today)':'')+'</span><span>'+h[1]+'</span></li>'}).join("");
+var sal=SALON[now.getDay()];
+if($("#openT"))$("#openT").innerHTML=(nowMin>=sal[0]&&nowMin<sal[1])?"<b>Open now</b> until "+tm(sal[1]):"Open today "+tm(sal[0])+" to "+tm(sal[1]);
+if($("#nx"))$("#nx").innerHTML=A.map(function(a){var s=slotsFor(a,0),f=s&&s.filter(function(x){return x.open})[0];return '<li><span class="av" style="--c:'+a.c+'">'+a.n[0]+'</span><b>'+a.n+'</b><span>'+(f?tm(f.m):(s?'Fully booked':'Off today'))+'</span></li>'}).join("");
 
-/* booking state */
-var B={s:[],a:null,di:null,m:null,ma:null};
-$("#svcs").innerHTML=SV.map(function(s,i){return '<button type="button" aria-pressed="false" data-s="'+i+'">'+s[0]+'</button>'}).join("");
-$("#sv").innerHTML=SV.map(function(s,i){return '<li class="rv"><div><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div><button type="button" data-add="'+i+'">Book</button></li>'}).join("");
-pend=pend.concat($$("#sv .rv"));
-function setSvc(i,on){var k=B.s.indexOf(i);if(on===undefined)on=k<0;if(on&&k<0)B.s.push(i);if(!on&&k>-1)B.s.splice(k,1);B.s.sort();$$("#svcs button").forEach(function(b){b.setAttribute("aria-pressed",B.s.indexOf(+b.getAttribute("data-s"))>-1)});upd();}
-$("#svcs").addEventListener("click",function(e){var b=e.target.closest("button");if(b)setSvc(+b.getAttribute("data-s"));});
-$("#sv").addEventListener("click",function(e){var b=e.target.closest("[data-add]");if(!b)return;setSvc(+b.getAttribute("data-add"),true);go("book");});
-function arts(){var list=[{id:"any",n:"Any artist",sp:"First available, fastest booking",c:"#34192a"}].concat(A);
- $("#arts").innerHTML=list.map(function(a){var wk="",no;
-  if(a.id==="any"){for(var di=0;di<7;di++){var t=0;A.forEach(function(x){var c=openCount(x,di);if(c>0)t+=c});wk+='<span><i style="height:'+Math.min(100,t*3)+'%"></i>'+N[DAYS[di].getDay()][0]+'</span>';}
-   var best=null;A.forEach(function(x){var o=nextOpen(x);if(o&&(!best||o.di<best.di||(o.di===best.di&&o.m<best.m)))best=o;});no=best;}
-  else{for(var di=0;di<7;di++){var c=openCount(a,di);wk+='<span class="'+(c<0?'off':'')+'" title="'+(c<0?'Off':c+' open')+'"><i style="height:'+(c<0?100:Math.max(6,Math.min(100,c*7)))+'%"></i>'+N[DAYS[di].getDay()][0]+'</span>';}no=nextOpen(a);}
-  return '<button type="button" class="art" data-a="'+a.id+'" aria-pressed="'+(B.a===a.id)+'" style="--c:'+a.c+'"><span class="top"><span class="av" style="--c:'+a.c+'">'+(a.id==="any"?"&#10033;":a.n[0])+'</span><span><b>'+a.n+'</b><small>'+a.sp+'</small></span></span><span class="wk" aria-label="Open times over the next 7 days">'+wk+'</span><span class="nxt">Next open: <em>'+(no?dayLabel(no.di)+", "+tm(no.m):"None this week")+'</em></span></button>'}).join("");}
-arts();
-$("#arts").addEventListener("click",function(e){var b=e.target.closest(".art");if(!b)return;B.a=b.getAttribute("data-a");B.m=null;B.ma=null;$$("#arts .art").forEach(function(o){o.setAttribute("aria-pressed",o===b)});
- if(B.di===null||dayOpen(B.di)<=0){for(var di=0;di<DAYS.length;di++)if(dayOpen(di)>0){B.di=di;break;}}days();slots();upd();});
-function anySlots(di){var map={};A.forEach(function(a){var s=slotsFor(a,di);if(!s)return;s.forEach(function(x){if(!map[x.m])map[x.m]={m:x.m,open:false,who:[]};if(x.open){map[x.m].open=true;map[x.m].who.push(a);}})});return Object.keys(map).map(function(k){return map[k]}).sort(function(p,q){return p.m-q.m});}
-function curSlots(di){if(!B.a)return null;if(B.a==="any")return anySlots(di);var a=A.filter(function(x){return x.id===B.a})[0];return slotsFor(a,di);}
-function dayOpen(di){var s=curSlots(di);if(!s)return -1;if(B.a==="any"&&!s.length)return -1;return s.filter(function(x){return x.open}).length;}
-function days(){if(!B.a){$("#days").innerHTML="";$("#dayInfo").textContent="Pick an artist first";return;}
- $("#days").innerHTML=DAYS.map(function(x,di){var c=dayOpen(di),off=c<0;return '<button type="button" data-d="'+di+'" class="'+(off?'off':'')+'"'+(off?' aria-disabled="true"':'')+' aria-pressed="'+(B.di===di)+'" aria-label="'+dayLabel(di)+', '+(off?'artist off':c+' open times')+'"><small>'+(di===0?'Today':N[x.getDay()])+'</small><b>'+x.getDate()+'</b><em>'+(off?'Off':c===0?'Full':c+' open')+'</em></button>'}).join("");
- var nm=B.a==="any"?"All artists":A.filter(function(a){return a.id===B.a})[0].n;$("#dayInfo").textContent=nm+"'s schedule";}
-$("#days").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.classList.contains("off"))return;B.di=+b.getAttribute("data-d");B.m=null;B.ma=null;$$("#days button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});slots();upd();});
-function slots(){var el=$("#slots"),em=$("#slotEmpty");if(!B.a||B.di===null){el.innerHTML="";em.hidden=false;em.textContent=B.a?"Pick a day to see open times.":"Pick an artist to see their open times.";return;}
- var s=curSlots(B.di)||[];if(!s.length||!s.some(function(x){return x.open})){el.innerHTML="";em.hidden=false;em.textContent="No open times left on this day. Try another day.";return;}em.hidden=true;
- el.innerHTML=s.map(function(x){var lab=B.a==="any"&&x.open?'<small>'+x.who.map(function(a){return a.n}).join(", ")+'</small>':(x.open?'':'<small>Booked</small>');return '<button type="button" data-m="'+x.m+'"'+(x.open?'':' disabled')+' aria-pressed="'+(B.m===x.m)+'" aria-label="'+tm(x.m)+(x.open?'':', booked')+'">'+tm(x.m)+lab+'</button>'}).join("");}
-$("#slots").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;B.m=+b.getAttribute("data-m");
- if(B.a==="any"){var x=anySlots(B.di).filter(function(s){return s.m===B.m})[0];B.ma=x.who[0];}else B.ma=A.filter(function(a){return a.id===B.a})[0];
- $$("#slots button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});upd();});
-["#cN","#cP"].forEach(function(s){$(s).addEventListener("input",upd)});["#r1","#r2"].forEach(function(s){$(s).addEventListener("change",upd)});
-function set(id,v,e){var el=$(id);el.classList.toggle("e",!v);el.textContent=v||e;}
-function svcTxt(){return B.s.map(function(i){return SV[i][0]}).join(" + ")}
-function whenTxt(){return B.m===null?"":dayLabel(B.di)+" at "+tm(B.m);}
-function upd(){set("#sS",svcTxt(),"Not picked yet");$("#svcN").textContent=B.s.length?B.s.length+" picked":"Pick one or more";
- set("#sA",B.ma?B.ma.n+(B.a==="any"?" (first available)":""):(B.a==="any"?"Any artist":B.a?A.filter(function(a){return a.id===B.a})[0].n:""),"Not picked yet");
- set("#sW",whenTxt(),"Not picked yet");set("#sN",$("#cN").value.trim(),"Not added yet");set("#sP",$("#cP").value.trim(),"Not added yet");
- var nm=$("#cN").value.trim().split(" ")[0]||"there",r1=$("#r1").checked,r2=$("#r2").checked;
- $("#bub").hidden=!(r1||r2);
- $("#bubT").textContent="Hi "+nm+", reminder from AJ Nails & Spa: your "+(svcTxt()||"appointment")+(B.ma?" with "+B.ma.n:"")+" is "+(B.m!==null?(r1?"tomorrow at "+tm(B.m):"today at "+tm(B.m)):"coming up")+". Reply C to confirm or call (516) 882-4808 to change.";
- var miss=[];if(!B.s.length)miss.push("a service");if(!B.a)miss.push("an artist");if(B.m===null)miss.push("a time");if(!$("#cN").value.trim())miss.push("your name");if(!$("#cP").value.trim())miss.push("your phone");
- $("#need").textContent=miss.length?"Still needed: "+miss.join(", ")+".":"All set. Confirm to book.";}
-days();slots();upd();
-var APPTS=[];
-$("#conf").addEventListener("click",function(){var miss=[];if(!B.s.length)miss.push("svcs");if(!B.a)miss.push("arts");if(B.m===null)miss.push(B.a?"days":"arts");
- var n=$("#cN"),p=$("#cP");[n,p].forEach(function(i){var ok=!!i.value.trim();i.parentNode.querySelector(".err").hidden=ok;i.setAttribute("aria-invalid",!ok);});
- if(miss.length){var t=$("#"+miss[0]);go("book");setTimeout(function(){var f=t.querySelector("button");if(f)f.focus({preventScroll:false})},400);$("#need").textContent="Almost there. "+$("#need").textContent.replace("Still needed","Still needed");return;}
- if(!n.value.trim()){n.focus();return;}if(!p.value.trim()){p.focus();return;}
- var ap={name:n.value.trim(),phone:p.value.replace(/\D/g,""),svc:svcTxt(),artist:B.ma,di:B.di,m:B.m,r1:$("#r1").checked,r2:$("#r2").checked};APPTS.push(ap);taken[B.ma.id+"|"+B.di+"|"+B.m]=1;
- var dt=DAYS[B.di],nm=ap.name.split(" ")[0];
- $("#dH").textContent="See you soon, "+nm+".";$("#dT").textContent=ap.svc+" with "+ap.artist.n+", "+NL[dt.getDay()]+", "+M[dt.getMonth()]+" "+dt.getDate()+" at "+tm(ap.m)+".";
- var tl=['<li><b>Now</b><span>Confirmation text to '+p.value.trim()+'</span></li>'];
- if(ap.r1){var sk1=B.di===0||(B.di===1&&ap.m<=nowMin);tl.push('<li><b>'+(sk1?"Skipped":dayLabel(B.di-1)+", "+tm(ap.m))+'</b><span>'+(sk1?"Day-before reminder (that time has already passed)":"Day-before reminder")+'</span></li>');}
- if(ap.r2){var sk2=B.di===0&&ap.m-120<=nowMin;tl.push('<li><b>'+(sk2?"Skipped":dayLabel(B.di)+", "+tm(ap.m-120))+'</b><span>'+(sk2?"2-hour reminder (your appointment is sooner than that)":"2-hour reminder")+'</span></li>');}
- tl.push('<li><b>'+dayLabel(B.di)+", "+tm(ap.m)+'</b><span>Your appointment. Check in on your phone when you arrive.</span></li>');
- $("#tl").innerHTML=tl.join("");$("#sumMain").hidden=true;$("#done").hidden=false;$("#done").focus();
- $("#kP").value=p.value;arts();days();slots();hero();});
-$("#again").addEventListener("click",function(){B={s:[],a:null,di:null,m:null,ma:null};$$("#svcs button").forEach(function(b){b.setAttribute("aria-pressed","false")});$("#cN").value="";$("#cP").value="";arts();days();slots();upd();$("#done").hidden=true;$("#sumMain").hidden=false;go("book");});
-$("#ics").addEventListener("click",function(){var ap=APPTS[APPTS.length-1];if(!ap)return;var dt=new Date(DAYS[ap.di]);dt.setMinutes(ap.m);var en=new Date(dt.getTime()+60*60000);
- function f(x){function p(n){return (n<10?"0":"")+n}return x.getFullYear()+p(x.getMonth()+1)+p(x.getDate())+"T"+p(x.getHours())+p(x.getMinutes())+"00"}
- var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//AJ Nails concept//EN","BEGIN:VEVENT","UID:"+Date.now()+"@ajnails-concept","DTSTAMP:"+f(new Date()),"DTSTART:"+f(dt),"DTEND:"+f(en),"SUMMARY:"+ap.svc+" with "+ap.artist.n+" (AJ Nails & Spa)","LOCATION:1014 Old Country Rd\\, Plainview\\, NY 11803","DESCRIPTION:Sample appointment from a website concept. Not a real booking.","END:VEVENT","END:VCALENDAR"].join("\r\n");
- var a=d.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="aj-nails-appointment.ics";d.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);});
-
-/* check-in */
+window.AJ={$:$,$$:$$,RM:RM,go:go,MENU:MENU,ALL:ALL,slug:slug,A:A,N:N,NL:NL,M:M,DAYS:DAYS,nowMin:nowMin,APPTS:APPTS,saveAppts:saveAppts,slotsFor:slotsFor,openCount:openCount,nextOpen:nextOpen,dayLabel:dayLabel,tm:tm,digits:digits,store:store,tick:function(){pend=pend.concat($$(".rv:not(.in)"));tick();}};
+})();
+</script>
+<script>
+(function(){var J=window.AJ,$=J.$,$$=J.$$;
+$("#sv").innerHTML=J.MENU.map(function(g){var min=Math.min.apply(null,g.i.map(function(s){return s[1]}));return '<li class="rv"><div><h3>'+g.c+'</h3><p>'+g.i.length+(g.i.length>1?' services':' service')+' &middot; from $'+min+'</p></div><a class="sva" href="services.html#'+J.slug(g.c)+'">View prices</a></li>'}).join("");J.tick();
 function tab(i){[0,1].forEach(function(k){$("#kt"+k).setAttribute("aria-selected",k===i);$("#kp"+k).hidden=k!==i;});}
 $("#kt0").addEventListener("click",function(){tab(0)});$("#kt1").addEventListener("click",function(){tab(1)});
-var Q=[{n:"Jess R.",s:"Pedicure",a:"Any artist",w:5},{n:"Dana M.",s:"UV gel",a:"Kim",w:15}];
-function qdraw(me){$("#q").innerHTML=Q.map(function(x,i){return '<li class="'+(x.me?'me':'')+'"><span><b>'+x.n+(x.me?' (you)':'')+'</b><small>'+x.s+' &middot; '+x.a+'</small></span><em>~'+x.w+' min</em></li>'}).join("");}
+var Q=[{n:"Jess R.",s:"Regular Pedicure",a:"Any artist",w:5},{n:"Dana M.",s:"UV Gel Full Set",a:"Kim",w:15}];
+function qdraw(){$("#q").innerHTML=Q.map(function(x){return '<li class="'+(x.me?'me':'')+'"><span><b>'+x.n+(x.me?' (you)':'')+'</b><small>'+x.s+' &middot; '+x.a+'</small></span><em>~'+x.w+' min</em></li>'}).join("");}
 qdraw();
-$("#wS").innerHTML=SV.map(function(s){return '<option>'+s[0]+'</option>'}).join("");
-var todayArts=A.filter(function(a){return slotsFor(a,0)!==null});
+$("#wS").innerHTML=J.MENU.map(function(g){return '<optgroup label="'+g.c+'">'+g.i.map(function(s){return '<option>'+s[0]+'</option>'}).join("")+'</optgroup>'}).join("");
+var todayArts=J.A.filter(function(a){return J.slotsFor(a,0)!==null});
 $("#wA").innerHTML='<option>First available</option>'+todayArts.map(function(a){return '<option>'+a.n+'</option>'}).join("");
 $("#wGo").addEventListener("click",function(){var n=$("#wN"),p=$("#wP"),bad=null;[n,p].forEach(function(i){var ok=!!i.value.trim();i.parentNode.querySelector(".err").hidden=ok;if(!ok&&!bad)bad=i;});if(bad){bad.focus();return;}
  Q=Q.filter(function(x){return !x.me});var parts=n.value.trim().split(/\s+/),nm=parts[0]+(parts[1]?" "+parts[1][0]+".":"");var w=(Q.length+1)*10+5;
  Q.push({n:nm,s:$("#wS").value,a:$("#wA").value==="First available"?"Any artist":$("#wA").value,w:w,me:true});qdraw();
- var r=$("#wRes");r.hidden=false;r.className="res";r.innerHTML="<b>You're #"+Q.length+" on the list.</b>About "+w+" minutes (sample). We'll text "+p.value.trim()+" when your artist is ready, so feel free to grab a coffee.";});
-$("#kFind").addEventListener("click",function(){var v=$("#kP").value.replace(/\D/g,""),r=$("#kRes");r.hidden=false;
- var ap=APPTS.filter(function(a){return v&&a.phone===v})[0];
- if(ap){r.className="res";r.innerHTML="<b>You're checked in, "+ap.name.split(" ")[0]+".</b>"+ap.artist.n+" knows you're here for your "+ap.svc.toLowerCase()+" at "+tm(ap.m)+" "+(ap.di===0?"today":"on "+dayLabel(ap.di))+". Have a seat in the lounge.";}
- else{r.className="res no";r.innerHTML="<b>No booking found.</b>We couldn't find an appointment for that number in this demo. Book one above first, or check in as a walk-in.";}});
+ var r=$("#wRes");r.hidden=false;r.className="res";r.innerHTML="<b>You're #"+Q.length+" on the list.</b>About "+w+" minutes (sample). We'll text "+p.value.trim()+" when your artist is ready.";});
+$("#kFind").addEventListener("click",function(){var v=J.digits($("#kP").value),r=$("#kRes");r.hidden=false;
+ var ap=J.APPTS.filter(function(a){return v&&a.phone===v&&!a.cancel})[0];
+ if(ap){r.className="res";r.innerHTML="<b>You're checked in, "+ap.first+".</b>"+ap.artistName+" knows you're here for your "+ap.svc+" at "+J.tm(ap.m)+". Have a seat in the lounge.";}
+ else{r.className="res no";r.innerHTML="<b>No booking found.</b>We couldn't find an appointment for that number in this demo. <a href=\"book.html\">Book one</a> first, or check in as a walk-in.";}});
 })();
 </script>
 </body>
